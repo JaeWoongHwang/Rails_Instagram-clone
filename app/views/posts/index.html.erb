@@ -1,0 +1,19 @@
+<h2>Instagram clone</h2>
+<p>Upload your photos</p>
+<!-- <%= link_to("New photos", "/posts/new") %> -->
+<!-- 인자가 확실하다면 괄호 생략가능 -->
+<%= link_to "[New photos]", "/posts/new" %><br>
+
+<% @post.each do |post| %>
+  <div>
+  Title : <%= link_to "#{post.title}", "/posts/show/#{post.id}" %><br>
+  <!-- <a href= "/posts/show/<%=post.id %>"></a> #위와 같은 코드-->
+  Content : <%= link_to "#{post.content}", "/posts/show/#{post.id}" %><br>
+  </div>
+<% end  %>
+
+<!-- <%= form_tag("/posts/create") do %>
+  <%= text_field_tag("title") %>
+  <%= text_field_tag("content") %>
+  <%= submit_tag("upload") %>
+<% end %> -->
